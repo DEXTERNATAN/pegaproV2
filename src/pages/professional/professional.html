@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{titlePage}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+ 
+<ion-content class="professional" >
+  <ion-fab top right edge>
+    <button ion-fab mini (click)="openFormProfessional()"   >
+        <ion-icon [hidden]="newProfessional" name="add"></ion-icon>
+        <ion-icon [hidden]="!newProfessional" name="remove"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <div padding [hidden]="!newProfessional" >
+  <ion-item>
+   <ion-label color="primary" stacked> Titulo</ion-label>
+   <ion-input type="text" aria-placeholder="Titulo do Trabalho" ></ion-input>
+  </ion-item>
+<ion-item>
+   <ion-label color="primary" stacked> Descricao</ion-label>
+   <ion-input type="text" aria-placeholder="Descricao do Trabalho" ></ion-input>
+  </ion-item>
+  <p>
+      <button ion-button block>Salvar</button>
+    </p>
+  </div>
+</ion-content>
+
+
